@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="material-scrolling-1.2.1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/jp.satorufujiwara/material-scrolling/1.2.1/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/jp.satorufujiwara/material-scrolling/1.2.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jp.satorufujiwara/material-scrolling/1.2.1/e01a0751f1fec59673c0812d0f4881b78512a87b/material-scrolling-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

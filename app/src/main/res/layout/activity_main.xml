@@ -1,84 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    tools:context="com.ggwp.kotatuaapp.MainActivity"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/material_grey_400"
     >
-
-    <ScrollView
-
+    <android.support.v4.widget.NestedScrollView
+        android:layout_marginTop="56dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-
-        >
-        <RelativeLayout
-
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/relLayContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.ggwp.kotatuaapp.MainActivity"
+            android:paddingBottom="112dp"
+            android:orientation="vertical">
+
+
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/carouselView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fillColor="#FFFFFFFF"
+                app:pageColor="#00000000"
+                app:radius="6dp"
+                app:slideInterval="3000"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="4dp"
+                >
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btn_sejarah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    fancy:fb_borderColor="#FFFFFF"
+                    fancy:fb_borderWidth="1dp"
+                    fancy:fb_defaultColor="#7ab800"
+                    fancy:fb_focusColor="#9bd823"
+                    fancy:fb_radius="48dp"
+                    fancy:fb_text="Sejarah"
+                    fancy:fb_textSize="16dp"
+                    fancy:fb_textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:weightSum="2"
+               android:orientation="horizontal"
+               android:baselineAligned="false">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:layout_weight="1"
+                   >
+
+                   <Button
+                       android:id="@+id/menu2"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Aktivitas"
+                       android:drawableLeft="@drawable/swing"/>
+                   <Button
+                       android:id="@+id/menu3"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Makanan"
+                       android:drawableLeft="@drawable/terrace"/>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:layout_weight="1"
+                   >
+                   <Button
+                       android:id="@+id/menu4"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Tempat Belanja"
+                       android:drawableLeft="@drawable/shop"/>
+                   <Button
+                       android:id="@+id/menu5"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Penginapan"
+                       android:drawableLeft="@drawable/house"/>
+               </LinearLayout>
+           </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:padding="4dp"
+                android:text="Address"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:background="@color/material_grey_100"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="somebutton"
+                    android:padding="4dp"
+
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_launcher"
+                    android:padding="4dp"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Maps &amp; direction >"
+                android:textAlignment="viewEnd"
+                android:padding="4dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/material_grey_100"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:padding="4dp"
+                android:text="Foto"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                android:orientation="horizontal"
+                android:background="@color/material_grey_100"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_launcher"
+                    android:padding="4dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_launcher"
+                    android:padding="4dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_launcher"
+                    android:padding="4dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_launcher"
+                    android:padding="4dp"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lihat Semua Foto >"
+                android:textAlignment="viewEnd"
+                android:padding="4dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/material_grey_100"
+                />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
             >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="56dp">
-        <com.synnapps.carouselview.CarouselView
-            android:id="@+id/carouselView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:fillColor="#FFFFFFFF"
-            app:pageColor="#00000000"
-            app:radius="6dp"
-            app:slideInterval="3000"
-            app:strokeColor="#FF777777"
-            app:strokeWidth="1dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Kota Tua"
+                android:fontFamily="cursive"
+                android:paddingLeft="40dp"
+                android:textSize="24dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
+            </android.support.v7.widget.Toolbar>
 
-        <!--<TextView-->
-        <!--android:layout_below="@id/carouselView"-->
-        <!--android:id="@+id/hello"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Hello World!" />-->
-        <!--<LinearLayout-->
-        <!--android:layout_below="@id/hello"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content">-->
-        <!--<EditText-->
-        <!--android:id="@+id/inputEditText"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--/>-->
-        <!--<Button-->
-        <!--android:id="@+id/submitButton"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:text="Submit"-->
-        <!--android:background="@color/colorPrimaryDark"-->
-        <!--android:textColor="#FFFFFF"-->
-
-        <!--/>-->
-        <!--</LinearLayout>-->
-
-        <android.support.v7.widget.RecyclerView
-            android:layout_below="@id/carouselView"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical" />
-        </RelativeLayout>
-        <com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView
-            android:id="@+id/bottomNavigation"
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" />
-
-
-
-        </RelativeLayout>
-    </ScrollView>
+            />
+    </FrameLayout>
 </RelativeLayout>
 

@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +22,7 @@ import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.github.aakira.expandablelayout.Utils;
 import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationItem;
 import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import com.synnapps.carouselview.ViewListener;
@@ -25,9 +30,11 @@ import com.synnapps.carouselview.ViewListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import mehdi.sakout.fancybuttons.FancyButton;
 
-public class MainActivity extends Activity {
 
+public class MainActivity extends AppCompatActivity {
+    private MaterialSearchView searchView;
     CarouselView customCarouselView;
     int NUMBER_OF_PAGES = 4;
 
@@ -46,20 +53,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        TextView helloWorld = (TextView) findViewById(R.id.hello);
-//        helloWorld.setText("Hello guys");
-//        final EditText inputText = (EditText) findViewById(R.id.inputEditText);
-//
-//        Button submitButton = (Button) findViewById(R.id.submitButton);
-//        submitButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String ambilText = inputText.getText().toString();
-//                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-//                intent.putExtra("Ganteng", ambilText);
-//                startActivity(intent);
-//            }
-//        });
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);
 
@@ -75,54 +68,67 @@ public class MainActivity extends Activity {
         // set ViewListener for custom view
         customCarouselView.setViewListener(viewListener);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        setSupportActionBar(toolbar);
 
-        final List<ItemModel> data = new ArrayList<>();
-        data.add(new ItemModel(
-                "0 ACCELERATE_DECELERATE_INTERPOLATOR",
-                R.color.material_red_500,
-                R.color.material_red_300,
-                Utils.createInterpolator(Utils.ACCELERATE_DECELERATE_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "1 ACCELERATE_INTERPOLATOR",
-                R.color.material_pink_500,
-                R.color.material_pink_300,
-                Utils.createInterpolator(Utils.ACCELERATE_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "2 BOUNCE_INTERPOLATOR",
-                R.color.material_purple_500,
-                R.color.material_purple_300,
-                Utils.createInterpolator(Utils.BOUNCE_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "3 DECELERATE_INTERPOLATOR",
-                R.color.material_deep_purple_500,
-                R.color.material_deep_purple_300,
-                Utils.createInterpolator(Utils.DECELERATE_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "4 FAST_OUT_LINEAR_IN_INTERPOLATOR",
-                R.color.material_indigo_500,
-                R.color.material_indigo_300,
-                Utils.createInterpolator(Utils.FAST_OUT_LINEAR_IN_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "5 FAST_OUT_SLOW_IN_INTERPOLATOR",
-                R.color.material_blue_500,
-                R.color.material_blue_300,
-                Utils.createInterpolator(Utils.FAST_OUT_SLOW_IN_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "6 LINEAR_INTERPOLATOR",
-                R.color.material_light_blue_500,
-                R.color.material_light_blue_300,
-                Utils.createInterpolator(Utils.LINEAR_INTERPOLATOR)));
-        data.add(new ItemModel(
-                "7 LINEAR_OUT_SLOW_IN_INTERPOLATOR",
-                R.color.material_cyan_500,
-                R.color.material_cyan_300,
-                Utils.createInterpolator(Utils.LINEAR_OUT_SLOW_IN_INTERPOLATOR)));
-        recyclerView.setAdapter(new RecyclerViewRecyclerAdapter(data));
+        searchView = (MaterialSearchView) findViewById(R.id.search_view);
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //Do some magic
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //Do some magic
+                return false;
+            }
+        });
+
+        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+                //Do some magic
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+                //Do some magic
+            }
+        });
+
+        FancyButton sejarahButton = (FancyButton) findViewById(R.id.btn_sejarah);
+        sejarahButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SejarahActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);
+
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (searchView.isSearchOpen()) {
+            searchView.closeSearch();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 
     ViewListener viewListener = new ViewListener() {
 
