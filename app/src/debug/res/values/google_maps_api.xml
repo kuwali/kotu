@@ -1,0 +1,21 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=F2:8B:BB:B5:9D:29:E6:29:22:67:51:E3:2D:96:C4:C4:84:C1:17:5F%3Bcom.ggwp.kotatuaapp
+
+    You can also add your credentials to an existing key, using this line:
+    F2:8B:BB:B5:9D:29:E6:29:22:67:51:E3:2D:96:C4:C4:84:C1:17:5F;com.ggwp.kotatuaapp
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+         AIzaSyA4isRf0pWofPg90-7bc48_BLukaMa4XYw
+    </string>
+</resources>

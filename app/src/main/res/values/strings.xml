@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotaTuaApp</string>
+    <string name="title_activity_maps">Peta Kota Tua</string>
 </resources>

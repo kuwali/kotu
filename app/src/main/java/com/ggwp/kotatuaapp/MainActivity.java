@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);
-
         BottomNavigationItem bottomNavigationItem = new BottomNavigationItem
                 ("Record", ContextCompat.getColor(this, R.color.firstColor), R.mipmap.ic_launcher);
         BottomNavigationItem bottomNavigationItem1 = new BottomNavigationItem
@@ -108,8 +108,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        LinearLayout mapsAndDirectionLinearLayout = (LinearLayout) findViewById(R.id.mapsAndDirectionLinearLayout);
+        TextView mapsAndDirectionTextView = (TextView) findViewById(R.id.mapsAndDirectionTextView);
+        mapsAndDirectionLinearLayout.setOnClickListener(mapsClickListener);
+        mapsAndDirectionTextView.setOnClickListener(mapsClickListener);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -139,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
             TextView labelTextView = (TextView) customView.findViewById(R.id.labelTextView);
             ImageView fruitImageView = (ImageView) customView.findViewById(R.id.fruitImageView);
 
-
             fruitImageView.setImageResource(sampleImages[position]);
             labelTextView.setText(sampleTitles[position]);
 
@@ -149,5 +152,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    };
+
+    View.OnClickListener mapsClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(intent);
+        }
     };
 }
