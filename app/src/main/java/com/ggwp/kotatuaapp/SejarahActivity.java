@@ -95,4 +95,8 @@ public class SejarahActivity extends AppCompatActivity {
         return (int) (dp * getResources().getDisplayMetrics().density);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

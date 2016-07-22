@@ -108,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button hotelButton = (Button) findViewById(R.id.menu5);
+        hotelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HotelActivity.class);
+                startActivity(intent);
+            }
+        });
+
         LinearLayout mapsAndDirectionLinearLayout = (LinearLayout) findViewById(R.id.mapsAndDirectionLinearLayout);
         TextView mapsAndDirectionTextView = (TextView) findViewById(R.id.mapsAndDirectionTextView);
         mapsAndDirectionLinearLayout.setOnClickListener(mapsClickListener);
