@@ -1,40 +1,39 @@
 package com.ggwp.kotatuaapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
-import com.github.aakira.expandablelayout.Utils;
+import com.etiennelawlor.imagegallery.library.activities.FullScreenImageGalleryActivity;
+import com.etiennelawlor.imagegallery.library.activities.ImageGalleryActivity;
+import com.etiennelawlor.imagegallery.library.adapters.FullScreenImageGalleryAdapter;
+import com.etiennelawlor.imagegallery.library.adapters.ImageGalleryAdapter;
 import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationItem;
 import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
+import com.squareup.picasso.Picasso;
 import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
 import com.synnapps.carouselview.ViewListener;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        ImageGalleryAdapter.ImageThumbnailLoader, FullScreenImageGalleryAdapter.FullScreenImageLoader{
     private MaterialSearchView searchView;
     CarouselView customCarouselView;
     int NUMBER_OF_PAGES = 4;
@@ -112,7 +111,16 @@ public class MainActivity extends AppCompatActivity {
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HotelActivity.class);
+                Intent intent = new Intent(MainActivity.this, PenginapanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button foodButton = (Button) findViewById(R.id.menu3);
+        foodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FoodActivity.class);
                 startActivity(intent);
             }
         });
@@ -121,6 +129,14 @@ public class MainActivity extends AppCompatActivity {
         TextView mapsAndDirectionTextView = (TextView) findViewById(R.id.mapsAndDirectionTextView);
         mapsAndDirectionLinearLayout.setOnClickListener(mapsClickListener);
         mapsAndDirectionTextView.setOnClickListener(mapsClickListener);
+
+        LinearLayout photosLinearLayout = (LinearLayout) findViewById(R.id.photosLinearLayout);
+        TextView photosTextView = (TextView) findViewById(R.id.photosTextView);
+        photosLinearLayout.setOnClickListener(photosClickListener);
+        photosTextView.setOnClickListener(photosClickListener);
+
+        ImageGalleryActivity.setImageThumbnailLoader(this);
+        FullScreenImageGalleryActivity.setFullScreenImageLoader(this);
     }
 
     @Override
@@ -170,4 +186,44 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+
+    View.OnClickListener photosClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, ImageGalleryActivity.class);
+
+            String[] images = getResources().getStringArray(R.array.unsplash_images);
+            Bundle bundle = new Bundle();
+            bundle.putStringArrayList(ImageGalleryActivity.KEY_IMAGES, new ArrayList<>(Arrays.asList(images)));
+            bundle.putString(ImageGalleryActivity.KEY_TITLE, "Galeri Kota Tua");
+            intent.putExtras(bundle);
+
+            startActivity(intent);
+        }
+    };
+
+    @Override
+    public void loadFullScreenImage(ImageView iv, String imageUrl, int width, LinearLayout bglinearLayout) {
+        if (!TextUtils.isEmpty(imageUrl)) {
+            Picasso.with(iv.getContext())
+                    .load(imageUrl)
+                    .resize(width, 0)
+                    .into(iv);
+        } else {
+            iv.setImageDrawable(null);
+        }
+    }
+
+    @Override
+    public void loadImageThumbnail(ImageView iv, String imageUrl, int dimension) {
+        if (!TextUtils.isEmpty(imageUrl)) {
+            Picasso.with(iv.getContext())
+                    .load(imageUrl)
+                    .resize(dimension, dimension)
+                    .centerCrop()
+                    .into(iv);
+        } else {
+            iv.setImageDrawable(null);
+        }
+    }
 }
