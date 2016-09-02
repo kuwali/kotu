@@ -6,18 +6,12 @@ package com.ggwp.kotatuaapp;
 public class Constants {
 
     public static String[] ANDROID_VERSIONS = new String[]{
-            "Marshmallow",
-            "Lollipop",
-            "KitKat",
-            "Jelly Bean",
-            "Ice Cream Sandwich",
-            "Honeycomb",
-            "Gingerbread",
-            "Froyo",
-            "Eclair",
-            "Donut",
-            "Cupcake",
-            "Banana Bread",
-            "Apple Pie"
+            "\n\n\n",
+            "Sejarah",
+            "Museum Sejarah Indonesia",
+            "Museum Wayang",
+            "Museum Seni Rupa dan Keramik",
+            "Museum Bank Indonesia",
+            "Museum Bank Mandiri",
     };
 }

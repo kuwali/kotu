@@ -18,7 +18,7 @@
             android:id="@+id/relLayContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="112dp"
+            android:paddingBottom="32dp"
             android:orientation="vertical">
 
 
@@ -33,32 +33,33 @@
                 app:strokeColor="#FF777777"
                 app:strokeWidth="1dp" />
 
-            <LinearLayout
-                android:id="@+id/LinearLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingTop="4dp"
-                >
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_sejarah"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingTop="10dp"
-                    fancy:fb_borderColor="#FFFFFF"
-                    fancy:fb_borderWidth="1dp"
-                    fancy:fb_defaultColor="#7ab800"
-                    fancy:fb_focusColor="#9bd823"
-                    fancy:fb_radius="48dp"
-                    fancy:fb_text="Sejarah"
-                    fancy:fb_textSize="16dp"
-                    fancy:fb_textColor="#FFFFFF" />
+            <!--<LinearLayout-->
+                <!--android:id="@+id/LinearLayout1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--&gt;-->
+                <!--<mehdi.sakout.fancybuttons.FancyButton-->
+                    <!--android:id="@+id/btn_sejarah"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingBottom="10dp"-->
+                    <!--android:paddingLeft="20dp"-->
+                    <!--android:paddingRight="20dp"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--fancy:fb_borderColor="#FFFFFF"-->
+                    <!--fancy:fb_borderWidth="1dp"-->
+                    <!--fancy:fb_defaultColor="#7ab800"-->
+                    <!--fancy:fb_focusColor="#9bd823"-->
+                    <!--fancy:fb_radius="48dp"-->
+                    <!--fancy:fb_text="Sejarah"-->
+                    <!--fancy:fb_textSize="16dp"-->
+                    <!--fancy:fb_textColor="#FFFFFF" />-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
            <LinearLayout
                android:layout_width="match_parent"
@@ -96,7 +97,7 @@
                        android:id="@+id/menu4"
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
-                       android:text="Tempat Belanja"
+                       android:text="Sejarah"
                        android:drawableLeft="@drawable/shop"/>
                    <Button
                        android:id="@+id/menu5"
@@ -111,7 +112,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:padding="4dp"
-                android:text="Address"
+                android:text="Alamat"
+                android:textSize="16dp"
                 />
             <LinearLayout
                 android:id="@+id/mapsAndDirectionLinearLayout"
@@ -125,22 +127,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="somebutton"
+                    android:text="                                             "
                     android:padding="4dp"
                     />
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/maps_logo"
                     android:padding="4dp"
-                    />
+                    android:layout_weight="1"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/mapsAndDirectionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Maps &amp; direction >"
+                android:text="Peta &amp; arah >"
                 android:textAlignment="viewEnd"
                 android:padding="4dp"
                 android:layout_marginTop="2dp"
@@ -153,41 +154,43 @@
                 android:layout_marginTop="16dp"
                 android:padding="4dp"
                 android:text="Foto"
+                android:textSize="16dp"
                 />
+
             <LinearLayout
                 android:id="@+id/photosLinearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="72dp"
                 android:weightSum="4"
                 android:orientation="horizontal"
                 android:background="@color/material_grey_100"
                 >
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/load1"
                     android:padding="4dp"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/load2"
                     android:padding="4dp"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/load3"
                     android:padding="4dp"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/load4"
                     android:padding="4dp"
                     />
             </LinearLayout>
@@ -204,12 +207,6 @@
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
-
     <FrameLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
@@ -220,24 +217,23 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimaryDark"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Kota Tua"
-                android:fontFamily="cursive"
-                android:paddingLeft="40dp"
-                android:textSize="24dp"
-                android:gravity="center"
-                android:textColor="@color/white"
-                />
-            </android.support.v7.widget.Toolbar>
+            ></android.support.v7.widget.Toolbar>
 
-        <com.miguelcatalan.materialsearchview.MaterialSearchView
-            android:id="@+id/search_view"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="match_parent"
+            android:text="Kota Tua"
+            android:fontFamily="cursive"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_gravity="left|bottom" />
+
+        <!--<com.miguelcatalan.materialsearchview.MaterialSearchView-->
+            <!--android:id="@+id/search_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
     </FrameLayout>
 </RelativeLayout>
 

@@ -1,0 +1,54 @@
+{
+	"places":[
+	{
+   "name": "Museum Sejarah Jakarta",
+   "lat": -6.1352,
+   "lng": 106.8133,
+   "place_id": "ID00016",
+   "address": "Jalan Taman Fatahillah No.1, Pinangsia, Tamansari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+   "phone": "(021) 6929101",
+   "price": "Dewasa:Rp5.000/Orang,Mahasiswa:Rp3.000/Orang,Pelajar/Anak-anak:Rp2.000/Orang",
+   "hours": "09.00-15.00(Selasa-Minggu),Senin dan Hari Libur Nasional Tutup"
+  },
+  {
+   "name": "Museum Wayang",
+   "lat": -6.1348764,
+   "lng": 106.812582,
+   "place_id": "ID00017",
+   "address": "Jl. Pintu Besar Utara No.27, Pinangsia, Tamansari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+   "phone": "(021) 6929560",
+   "price": "Dewasa:Rp5.000/Orang, Mahasiswa:Rp3.000/Orang, Pelajar/Anak-anak:Rp2.000/Orang",
+   "hours": "09.00-15.00(Selasa-Minggu),Senin dan Hari Libur Nasional Tutup"
+  },
+  {
+   "name": "Museum Seni Rupa dan Keramik",
+   "lat": -6.134237,
+   "lng": 106.8143955,
+   "place_id": "ID00018",
+   "address": "Jl. Pos Kota No.2, Pinangsia, Tamansari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+   "phone": "(021) 6926090",
+   "price": "Dewasa:Rp5.000/Orang, Mahasiswa:Rp3.000/Orang, Pelajar/Anak-anak:Rp2.000/Orang",
+   "hours": "09.00-15.00(Selasa-Minggu),Senin dan Hari Libur Nasional Tutup"
+  },
+  {
+   "name": "Museum Bank Indonesia",
+   "lat": -6.1371972,
+   "lng": 106.8127084,
+   "place_id": "ID00019",
+   "address": "Jalan Pintu Besar Utara No. 3, Pinangsia, Jakarta Barat, DKI Jakarta, Daerah Khusus Ibukota Jakarta",
+   "phone": "(021) 2600158",
+   "price": "Dewasa dan Anak-anak:Rp5.000, Mahasiswa/Pelajar Gratis",
+   "hours": "08.00-15.30(Selasa-Jumat),08.00-16.00(Sabtu-Minggu)"
+  },
+  {
+   "name": "Museum Bank Mandiri",
+   "lat": -6.1381567,
+   "lng": 106.8108539,
+   "place_id": "ID00020",
+   "address": "Jl. Lapangan Stasiun No. 1, Tamansari, Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+   "phone": "(021) 6902000",
+   "price": "Dewasa:Rp2.000, Anak-anak:Gratis",
+   "hours": "09.00-16.00(Selasa-Minggu), Senin dan Hari Libur Nasional Tutup"
+  }
+]
+}

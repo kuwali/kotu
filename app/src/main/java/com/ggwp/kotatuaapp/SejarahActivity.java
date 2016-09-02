@@ -12,10 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ggwp.kotatuaapp.behavior.FabBehavior;
 import com.ggwp.kotatuaapp.behavior.OverlayViewBehavior;
 import com.ggwp.kotatuaapp.behavior.TitleBehavior;
+import com.google.android.gms.vision.text.Text;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -74,12 +76,12 @@ public class SejarahActivity extends AppCompatActivity {
         scrollingLayout.addBehavior(titleText, new TitleBehavior(getResources()));
         scrollingLayout.addBehavior(fab, new FabBehavior(getResources()));
 
-        for (String name : Constants.ANDROID_VERSIONS) {
+        for (final String name : Constants.ANDROID_VERSIONS) {
             adapter.add(ImageFabSection.CONTENTS,
                     new TextBinder(this, name, new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
+                            String s = name;
                         }
                     }));
         }

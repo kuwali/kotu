@@ -43,7 +43,7 @@ import java.util.List;
 
 import static com.google.android.gms.location.LocationServices.FusedLocationApi;
 
-public class PenginapanMapsActivity extends AppCompatActivity
+public class LandmarkMapsActivity extends AppCompatActivity
         implements
         OnMapReadyCallback,
         DirectionCallback {
@@ -106,7 +106,7 @@ public class PenginapanMapsActivity extends AppCompatActivity
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                View v = LayoutInflater.from(PenginapanMapsActivity.this).inflate(R.layout.bottom_sheet_place, null);
+                View v = LayoutInflater.from(LandmarkMapsActivity.this).inflate(R.layout.bottom_sheet_place, null);
                 TextView addressTextView = (TextView) v.findViewById(R.id.address_text_view);
                 TextView phoneTextView = (TextView) v.findViewById(R.id.phone_number_text_view);
                 TextView placeNameTextView = (TextView) v.findViewById(R.id.place_name_text_view);

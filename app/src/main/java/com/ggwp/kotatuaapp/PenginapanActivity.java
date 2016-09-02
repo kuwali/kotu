@@ -62,7 +62,6 @@ public class PenginapanActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
                 Places place = hotels.get(position);
-                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(PenginapanActivity.this, PenginapanMapsActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("name", place.getName());

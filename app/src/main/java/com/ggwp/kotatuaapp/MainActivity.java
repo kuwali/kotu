@@ -34,12 +34,12 @@ import mehdi.sakout.fancybuttons.FancyButton;
 
 public class MainActivity extends AppCompatActivity implements
         ImageGalleryAdapter.ImageThumbnailLoader, FullScreenImageGalleryAdapter.FullScreenImageLoader{
-    private MaterialSearchView searchView;
+//    private MaterialSearchView searchView;
     CarouselView customCarouselView;
-    int NUMBER_OF_PAGES = 4;
+    int NUMBER_OF_PAGES = 3;
 
-    int[] sampleImages = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
-    String[] sampleTitles = {"Orange", "Grapes", "Strawberry", "Cherry", "Apricot"};
+    int[] sampleImages = {R.drawable.car1, R.drawable.car2, R.drawable.car3};
+    String[] sampleTitles = {"", "", "", "", ""};
     String[] sampleNetworkImageURLs = {
             "https://placeholdit.imgix.net/~text?txtsize=15&txt=image1&txt=350%C3%97150&w=350&h=150",
             "https://placeholdit.imgix.net/~text?txtsize=15&txt=image2&txt=350%C3%97150&w=350&h=150",
@@ -53,52 +53,44 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);
-        BottomNavigationItem bottomNavigationItem = new BottomNavigationItem
-                ("Record", ContextCompat.getColor(this, R.color.firstColor), R.mipmap.ic_launcher);
-        BottomNavigationItem bottomNavigationItem1 = new BottomNavigationItem
-                ("Like", ContextCompat.getColor(this, R.color.secondColor), R.mipmap.ic_launcher);
-        bottomNavigationView.addTab(bottomNavigationItem);
-        bottomNavigationView.addTab(bottomNavigationItem1);
-
         customCarouselView = (CarouselView) findViewById(R.id.carouselView);
         customCarouselView.setPageCount(NUMBER_OF_PAGES);
         // set ViewListener for custom view
         customCarouselView.setViewListener(viewListener);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
 
         setSupportActionBar(toolbar);
 
-        searchView = (MaterialSearchView) findViewById(R.id.search_view);
-        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                //Do some magic
-                return false;
-            }
+//        searchView = (MaterialSearchView) findViewById(R.id.search_view);
+//        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                //Do some magic
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                //Do some magic
+//                return false;
+//            }
+//        });
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                //Do some magic
-                return false;
-            }
-        });
+//        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+//            @Override
+//            public void onSearchViewShown() {
+//                //Do some magic
+//            }
+//
+//            @Override
+//            public void onSearchViewClosed() {
+//                //Do some magic
+//            }
+//        });
 
-        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
-            @Override
-            public void onSearchViewShown() {
-                //Do some magic
-            }
-
-            @Override
-            public void onSearchViewClosed() {
-                //Do some magic
-            }
-        });
-
-        FancyButton sejarahButton = (FancyButton) findViewById(R.id.btn_sejarah);
+        Button sejarahButton = (Button) findViewById(R.id.menu4);
         sejarahButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +112,16 @@ public class MainActivity extends AppCompatActivity implements
         foodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FoodActivity.class);
+                Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button activityButton = (Button) findViewById(R.id.menu2);
+        activityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LandmarkActivity.class);
                 startActivity(intent);
             }
         });
@@ -143,19 +144,20 @@ public class MainActivity extends AppCompatActivity implements
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
 
-        MenuItem item = menu.findItem(R.id.action_search);
-        searchView.setMenuItem(item);
+//        MenuItem item = menu.findItem(R.id.action_search);
+//        searchView.setMenuItem(item);
 
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        if (searchView.isSearchOpen()) {
-            searchView.closeSearch();
-        } else {
-            super.onBackPressed();
-        }
+//        if (searchView.isSearchOpen()) {
+//            searchView.closeSearch();
+//        } else {
+//            super.onBackPressed();
+//        }
+        super.onBackPressed();
     }
 
 

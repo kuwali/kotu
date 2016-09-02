@@ -14,6 +14,8 @@ public class Places {
     private String vicinity;
     private String price;
     private String rating;
+    private String waktu;
+    private String cuisine;
 
     public Places(String name, double lat, double lng, String place_id, String vicinity, String address, String phone_number, String price, String rating) {
         this.name = name;
@@ -36,6 +38,30 @@ public class Places {
         this.phone_number = phone_number;
         this.vicinity = "";
         this.price = price;
+    }
+
+
+    public Places(double lat, double lng, String name, String place_id, String address, String phone_number, String price, String waktu, String cuisine) {
+        this.name = name;
+        this.lat = lat;
+        this.lng = lng;
+        this.place_id = place_id;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.price = price;
+        this.waktu = waktu;
+        this.cuisine = cuisine;
+    }
+
+    public Places(double lat, double lng, String name, String place_id, String address, String phone_number, String price, String waktu) {
+        this.name = name;
+        this.lat = lat;
+        this.lng = lng;
+        this.place_id = place_id;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.price = price;
+        this.waktu = waktu;
     }
 
     public String getName() {
@@ -101,4 +127,20 @@ public class Places {
     public String getRating() { return this.rating; }
 
     public void setRating(String rating) { this.rating = rating; }
+
+    public String getWaktu() {
+        return waktu;
+    }
+
+    public void setWaktu(String waktu) {
+        this.waktu = waktu;
+    }
+
+    public String getcuisine() {
+        return cuisine;
+    }
+
+    public void setcuisine(String cuisine) {
+        this.cuisine = cuisine;
+    }
 }
